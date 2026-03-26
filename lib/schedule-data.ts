@@ -17,7 +17,7 @@ export const SCHEDULE: Artist[] = [
   { id: "matty-ralph-fri", name: "Matty Ralph", stage: "worldwide-stage", stageLabel: "Worldwide Stage", day: "friday", dayLabel: "Friday", startTime: "17:00", endTime: "18:00", startTimeDisplay: "5:00 PM", endTimeDisplay: "6:00 PM" },
   { id: "superstrings-fri", name: "Superstrings", stage: "worldwide-stage", stageLabel: "Worldwide Stage", day: "friday", dayLabel: "Friday", startTime: "18:00", endTime: "19:00", startTimeDisplay: "6:00 PM", endTimeDisplay: "7:00 PM" },
   { id: "vini-vici-fri", name: "Vini Vici", stage: "worldwide-stage", stageLabel: "Worldwide Stage", day: "friday", dayLabel: "Friday", startTime: "19:00", endTime: "20:00", startTimeDisplay: "7:00 PM", endTimeDisplay: "8:00 PM" },
-  { id: "lily-palmer-fri", name: "Lily Palmer", stage: "worldwide-stage", stageLabel: "Worldwide Stage", day: "friday", dayLabel: "Friday", startTime: "20:00", endTime: "21:00", startTimeDisplay: "8:00 PM", endTimeDisplay: "9:00 PM" },
+  { id: "lily-palmer-fri", name: "Lilly Palmer", stage: "worldwide-stage", stageLabel: "Worldwide Stage", day: "friday", dayLabel: "Friday", startTime: "20:00", endTime: "21:00", startTimeDisplay: "8:00 PM", endTimeDisplay: "9:00 PM" },
   { id: "armin-van-buuren-b2b-marlon-hoffstadt-fri", name: "Armin van Buuren B2B Marlon Hoffstadt", stage: "worldwide-stage", stageLabel: "Worldwide Stage", day: "friday", dayLabel: "Friday", startTime: "21:00", endTime: "22:30", startTimeDisplay: "9:00 PM", endTimeDisplay: "10:30 PM" },
   { id: "armin-van-buuren-fri", name: "Armin van Buuren", stage: "worldwide-stage", stageLabel: "Worldwide Stage", day: "friday", dayLabel: "Friday", startTime: "22:30", endTime: "24:00", startTimeDisplay: "10:30 PM", endTimeDisplay: "12:00 AM" },
 
@@ -54,7 +54,7 @@ export const SCHEDULE: Artist[] = [
   { id: "bloody-beetroots-fri", name: "Bloody Beetroots", stage: "umf-radio", stageLabel: "UMF Radio", day: "friday", dayLabel: "Friday", startTime: "23:15", endTime: "24:00", startTimeDisplay: "11:15 PM", endTimeDisplay: "12:00 AM" },
 
   // FRIDAY — Oasis (closes 00:00)
-  { id: "nundo-fri", name: "Nundo", stage: "oasis", stageLabel: "Oasis", day: "friday", dayLabel: "Friday", startTime: "16:00", endTime: "17:00", startTimeDisplay: "4:00 PM", endTimeDisplay: "5:00 PM" },
+  { id: "nundo-fri", name: "Nudos", stage: "oasis", stageLabel: "Oasis", day: "friday", dayLabel: "Friday", startTime: "16:00", endTime: "17:00", startTimeDisplay: "4:00 PM", endTimeDisplay: "5:00 PM" },
   { id: "richard-fraioli-b3b-jimmy-page-b3b-dj-ideal-fri", name: "Richard Fraioli B3B Jimmy Page B3B DJ Ideal", stage: "oasis", stageLabel: "Oasis", day: "friday", dayLabel: "Friday", startTime: "17:00", endTime: "18:30", startTimeDisplay: "5:00 PM", endTimeDisplay: "6:30 PM" },
   { id: "los-de-la-vega-fri", name: "Los de la Vega", stage: "oasis", stageLabel: "Oasis", day: "friday", dayLabel: "Friday", startTime: "18:30", endTime: "19:30", startTimeDisplay: "6:30 PM", endTimeDisplay: "7:30 PM" },
   { id: "hymm-marley-fri", name: "Hymm Marley", stage: "oasis", stageLabel: "Oasis", day: "friday", dayLabel: "Friday", startTime: "19:30", endTime: "20:00", startTimeDisplay: "7:30 PM", endTimeDisplay: "8:00 PM" },
@@ -135,7 +135,7 @@ export const SCHEDULE: Artist[] = [
   // SATURDAY — Oasis (closes 00:00)
   { id: "cimeo-sat", name: "Cimeo", stage: "oasis", stageLabel: "Oasis", day: "saturday", dayLabel: "Saturday", startTime: "12:00", endTime: "13:00", startTimeDisplay: "12:00 PM", endTimeDisplay: "1:00 PM" },
   { id: "juno-b3b-wyzzard-b3b-bebe-breaks-sat", name: "Juno B3B Wyzzard B3B Bebe Breaks", stage: "oasis", stageLabel: "Oasis", day: "saturday", dayLabel: "Saturday", startTime: "13:00", endTime: "14:00", startTimeDisplay: "1:00 PM", endTimeDisplay: "2:00 PM" },
-  { id: "kauro-sat", name: "Kauro", stage: "oasis", stageLabel: "Oasis", day: "saturday", dayLabel: "Saturday", startTime: "14:00", endTime: "15:00", startTimeDisplay: "2:00 PM", endTimeDisplay: "3:00 PM" },
+  { id: "kauro-sat", name: "Kaoru", stage: "oasis", stageLabel: "Oasis", day: "saturday", dayLabel: "Saturday", startTime: "14:00", endTime: "15:00", startTimeDisplay: "2:00 PM", endTimeDisplay: "3:00 PM" },
   { id: "soul-goodman-b2b-dabura-sat", name: "Soul Goodman B2B Dabura", stage: "oasis", stageLabel: "Oasis", day: "saturday", dayLabel: "Saturday", startTime: "15:00", endTime: "16:00", startTimeDisplay: "3:00 PM", endTimeDisplay: "4:00 PM" },
   { id: "cvmrn-sat", name: "Cvmrn", stage: "oasis", stageLabel: "Oasis", day: "saturday", dayLabel: "Saturday", startTime: "16:00", endTime: "17:00", startTimeDisplay: "4:00 PM", endTimeDisplay: "5:00 PM" },
   { id: "bill-kelly-sat", name: "Bill Kelly", stage: "oasis", stageLabel: "Oasis", day: "saturday", dayLabel: "Saturday", startTime: "17:00", endTime: "18:00", startTimeDisplay: "5:00 PM", endTimeDisplay: "6:00 PM" },
@@ -168,7 +168,7 @@ export const SCHEDULE: Artist[] = [
   { id: "holy-priest-sun", name: "Holy Priest", stage: "worldwide-stage", stageLabel: "Worldwide Stage", day: "sunday", dayLabel: "Sunday", startTime: "17:00", endTime: "18:00", startTimeDisplay: "5:00 PM", endTimeDisplay: "6:00 PM" },
   { id: "peekaboo-sun", name: "Peekaboo", stage: "worldwide-stage", stageLabel: "Worldwide Stage", day: "sunday", dayLabel: "Sunday", startTime: "18:00", endTime: "19:00", startTimeDisplay: "6:00 PM", endTimeDisplay: "7:00 PM" },
   { id: "ray-volpe-b2b-sullivan-king-sun", name: "Ray Volpe B2B Sullivan King", stage: "worldwide-stage", stageLabel: "Worldwide Stage", day: "sunday", dayLabel: "Sunday", startTime: "19:00", endTime: "20:30", startTimeDisplay: "7:00 PM", endTimeDisplay: "8:30 PM" },
-  { id: "wankelmut-sun", name: "Wankelmut", stage: "worldwide-stage", stageLabel: "Worldwide Stage", day: "sunday", dayLabel: "Sunday", startTime: "20:30", endTime: "22:00", startTimeDisplay: "8:30 PM", endTimeDisplay: "10:00 PM" },
+  { id: "wankdat-sun", name: "Wankdat", stage: "worldwide-stage", stageLabel: "Worldwide Stage", day: "sunday", dayLabel: "Sunday", startTime: "20:30", endTime: "22:00", startTimeDisplay: "8:30 PM", endTimeDisplay: "10:00 PM" },
 
   // SUNDAY — RESISTANCE Megastructure (closes 22:00)
   { id: "bassett-b2b-christopher-james-sun", name: "Bassett B2B Christopher James", stage: "resistance-megastructure", stageLabel: "RESISTANCE Megastructure", day: "sunday", dayLabel: "Sunday", startTime: "12:00", endTime: "14:00", startTimeDisplay: "12:00 PM", endTimeDisplay: "2:00 PM" },
