@@ -1,6 +1,6 @@
 "use client";
 
-export type ViewMode = "lineup" | "schedule";
+export type ViewMode = "lineup" | "schedule" | "map";
 
 interface ViewToggleProps {
   view: ViewMode;
@@ -29,6 +29,16 @@ export default function ViewToggle({ view, onChangeView }: ViewToggleProps) {
         }`}
       >
         My Schedule
+      </button>
+      <button
+        onClick={() => onChangeView("map")}
+        className={`flex-1 py-2 text-sm font-medium rounded-md transition-all ${
+          view === "map"
+            ? "bg-gradient-to-r from-cyan-400 to-violet-500 text-white"
+            : "text-gray-400 hover:text-gray-300"
+        }`}
+      >
+        Map
       </button>
     </div>
   );

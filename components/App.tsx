@@ -10,6 +10,7 @@ import StageFilter from "./StageFilter";
 import SearchBar from "./SearchBar";
 import ArtistCard from "./ArtistCard";
 import TimelineView from "./TimelineView";
+import MapView from "./MapView";
 
 function getDefaultDay(): DayId {
   const now = new Date();
@@ -106,49 +107,55 @@ export default function App() {
           </div>
         )}
 
-        <div className="mt-2">
-          <SearchBar query={searchQuery} onChangeQuery={setSearchQuery} />
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="pb-8 pt-2">
-        {view === "schedule" ? (
-          <TimelineView
-            artists={SCHEDULE}
-            selectedDay={selectedDay}
-            favoriteIds={favoriteIds}
-            onToggleFavorite={toggleFavorite}
-            isFavorite={isFavorite}
-            onChangeView={setView}
-            searchQuery={searchQuery}
-          />
-        ) : (
-          <div className="flex flex-col gap-2 px-4">
-            {filteredArtists.map((artist) => {
-              let isLive = false;
-              if (isToday) {
-                const start = parseTime(artist.startTime);
-                let end = parseTime(artist.endTime);
-                if (end <= start) end += 24 * 60;
-                isLive = currentMinutes >= start && currentMinutes < end;
-              }
-              return (
-                <ArtistCard
-                  key={artist.id}
-                  artist={artist}
-                  isFavorite={isFavorite(artist.id)}
-                  onToggleFavorite={toggleFavorite}
-                  isLive={isLive}
-                />
-              );
-            })}
-            {filteredArtists.length === 0 && (
-              <p className="text-center text-gray-500 py-12 text-sm">No artists found.</p>
-            )}
+        {view !== "map" && (
+          <div className="mt-2">
+            <SearchBar query={searchQuery} onChangeQuery={setSearchQuery} />
           </div>
         )}
       </div>
+
+      {/* Content */}
+      {view === "map" ? (
+        <MapView />
+      ) : (
+        <div className="pb-8 pt-2">
+          {view === "schedule" ? (
+            <TimelineView
+              artists={SCHEDULE}
+              selectedDay={selectedDay}
+              favoriteIds={favoriteIds}
+              onToggleFavorite={toggleFavorite}
+              isFavorite={isFavorite}
+              onChangeView={setView}
+              searchQuery={searchQuery}
+            />
+          ) : (
+            <div className="flex flex-col gap-2 px-4">
+              {filteredArtists.map((artist) => {
+                let isLive = false;
+                if (isToday) {
+                  const start = parseTime(artist.startTime);
+                  let end = parseTime(artist.endTime);
+                  if (end <= start) end += 24 * 60;
+                  isLive = currentMinutes >= start && currentMinutes < end;
+                }
+                return (
+                  <ArtistCard
+                    key={artist.id}
+                    artist={artist}
+                    isFavorite={isFavorite(artist.id)}
+                    onToggleFavorite={toggleFavorite}
+                    isLive={isLive}
+                  />
+                );
+              })}
+              {filteredArtists.length === 0 && (
+                <p className="text-center text-gray-500 py-12 text-sm">No artists found.</p>
+              )}
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }
