@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ServiceWorkerRegistrar } from "./sw-register";
+import { ServiceWorkerRegistrar } from "@/components/sw-register";
 
 const inter = Inter({ subsets: ["latin"] });
 
