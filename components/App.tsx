@@ -13,6 +13,7 @@ import ArtistCard from "./ArtistCard";
 import TimelineView from "./TimelineView";
 import FriendsView from "./FriendsView";
 import MapView from "./MapView";
+import HelpOverlay from "./HelpOverlay";
 
 function getDefaultDay(): DayId {
   const now = new Date();
@@ -36,6 +37,7 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState("");
   const [favoriteIds, toggleFavorite, isFavorite] = useFavorites();
   const { friends, addFriend, removeFriend } = useFriends();
+  const [showHelp, setShowHelp] = useState(false);
 
   const handleSelectDay = (day: DayId) => {
     setSelectedDay(day);
@@ -80,6 +82,14 @@ export default function App() {
 
   const totalFavs = favoriteIds.length;
 
+  if (showHelp) {
+    return (
+      <div className="min-h-screen bg-[#0a0a0a] text-white">
+        <HelpOverlay onClose={() => setShowHelp(false)} />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white">
       {/* Header */}
@@ -91,11 +101,20 @@ export default function App() {
             </h1>
             <p className="text-[10px] text-gray-500 uppercase tracking-widest">Schedule Planner</p>
           </div>
-          {totalFavs > 0 && (
-            <div className="text-xs text-yellow-400 bg-yellow-400/10 px-2.5 py-1 rounded-full">
-              &#9733; {totalFavs}
-            </div>
-          )}
+          <div className="flex items-center gap-2">
+            {totalFavs > 0 && (
+              <div className="text-xs text-yellow-400 bg-yellow-400/10 px-2.5 py-1 rounded-full">
+                &#9733; {totalFavs}
+              </div>
+            )}
+            <button
+              onClick={() => setShowHelp(true)}
+              className="w-8 h-8 flex items-center justify-center rounded-full bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 transition-all text-sm"
+              aria-label="Help and instructions"
+            >
+              ?
+            </button>
+          </div>
         </div>
 
         <DayTabs selectedDay={selectedDay} onSelectDay={handleSelectDay} favCountsByDay={favCountsByDay} />
@@ -171,6 +190,7 @@ export default function App() {
           )}
         </div>
       )}
+
     </div>
   );
 }
