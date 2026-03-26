@@ -4,12 +4,14 @@ import { useState, useMemo } from "react";
 import { DayId, StageId } from "@/lib/types";
 import { SCHEDULE } from "@/lib/schedule-data";
 import { useFavorites } from "@/lib/favorites";
+import { useFriends } from "@/lib/friends";
 import DayTabs from "./DayTabs";
 import ViewToggle, { ViewMode } from "./ViewToggle";
 import StageFilter from "./StageFilter";
 import SearchBar from "./SearchBar";
 import ArtistCard from "./ArtistCard";
 import TimelineView from "./TimelineView";
+import FriendsView from "./FriendsView";
 import MapView from "./MapView";
 
 function getDefaultDay(): DayId {
@@ -33,6 +35,7 @@ export default function App() {
   const [selectedStage, setSelectedStage] = useState<StageId | "all">("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [favoriteIds, toggleFavorite, isFavorite] = useFavorites();
+  const { friends, addFriend, removeFriend } = useFriends();
 
   const handleSelectDay = (day: DayId) => {
     setSelectedDay(day);
@@ -127,6 +130,18 @@ export default function App() {
               onToggleFavorite={toggleFavorite}
               isFavorite={isFavorite}
               onChangeView={setView}
+              searchQuery={searchQuery}
+            />
+          ) : view === "friends" ? (
+            <FriendsView
+              artists={SCHEDULE}
+              selectedDay={selectedDay}
+              friends={friends}
+              userFavoriteIds={favoriteIds}
+              isFavorite={isFavorite}
+              onToggleFavorite={toggleFavorite}
+              onAddFriend={addFriend}
+              onRemoveFriend={removeFriend}
               searchQuery={searchQuery}
             />
           ) : (

@@ -21,3 +21,10 @@ export interface Artist {
   startTimeDisplay: string;
   endTimeDisplay: string;
 }
+
+export interface FriendSchedule {
+  id: string;
+  name: string;
+  favoriteIds: string[];
+  importedAt: number;
+}

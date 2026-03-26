@@ -11,12 +11,12 @@ const DAY_LABELS: Record<DayId, string> = {
   sunday: "Sunday",
 };
 
-function parseTime(t: string): number {
+export function parseTime(t: string): number {
   const [h, m] = t.split(":").map(Number);
   return h * 60 + m;
 }
 
-function getConflicts(artists: Artist[]): Map<string, string[]> {
+export function getConflicts(artists: Artist[]): Map<string, string[]> {
   const conflicts = new Map<string, string[]>();
 
   for (let i = 0; i < artists.length; i++) {

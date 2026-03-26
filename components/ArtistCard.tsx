@@ -10,9 +10,10 @@ interface ArtistCardProps {
   onToggleFavorite: (id: string) => void;
   isLive?: boolean;
   conflictNames?: string[];
+  overlapFriendName?: string;
 }
 
-export default function ArtistCard({ artist, isFavorite, onToggleFavorite, isLive, conflictNames }: ArtistCardProps) {
+export default function ArtistCard({ artist, isFavorite, onToggleFavorite, isLive, conflictNames, overlapFriendName }: ArtistCardProps) {
   const colors = STAGE_COLORS[artist.stage];
 
   return (
@@ -35,6 +36,12 @@ export default function ArtistCard({ artist, isFavorite, onToggleFavorite, isLiv
         <span className={`inline-block mt-1 px-2 py-0.5 rounded-full text-[10px] font-medium ${colors.bg} ${colors.text}`}>
           {artist.stageLabel}
         </span>
+        {overlapFriendName && (
+          <div className="flex items-center gap-1 text-cyan-400 text-xs mt-1">
+            <span>&#x1F91D;</span>
+            <span>You &amp; {overlapFriendName}</span>
+          </div>
+        )}
         {conflictNames && conflictNames.length > 0 && (
           <ConflictBadge conflictNames={conflictNames} />
         )}
